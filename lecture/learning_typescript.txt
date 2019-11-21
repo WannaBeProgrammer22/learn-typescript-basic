@@ -1,0 +1,65 @@
+Use npm to install typescript
+npm install -g typescript@latest
+
+to verify if it is installed show the version
+tsc -v
+
+first
+create a file and give it an extension name of .ts for typescript
+example first.ts
+
+let a = 5;
+let b = 5;
+let c = a + b;
+console.log(c);
+
+The next step is to compile our TypeScript into plain JavaScript, as browsers want .js files to read.
+To compile, we’ll run the command of tsc filename.ts, which creates a JavaScript file with the same filename but a different extension, and which we eventually can pass on to our browsers.
+
+Data types
+TypeScript — is the typed version of JavaScript. This means we can specify types to different variables at the time of declaration. They will always hold the same type of data in that scope.
+
+There are 3 tpyes in TypeScript
+1. any - The any data type is the superset of all the data types in TypeScript. Giving any variable the type of any is equivalent to opting out of type checking for a variable.
+
+let myVariable: any = 'This is a string'
+
+
+2. built-in types - These are the types which are built in TypeScript. They include number, string, boolean, void, null and undefined.
+
+let num: number = 5;  
+let name: string = 'Alex';  
+let isPresent: boolean = true;
+
+3. user-defined types
+The User-defined types include enum, class, interface, array, and tuple. We will discuss some of these later in this article.
+
+
+Object-oriented programming
+TypeScript supports all the features of object-oriented programming, such as classes and interfaces. This capability is a huge boost to JavaScript — it has always been struggling with its OOP functionality, especially since developers started using it for large scale applications.
+
+Class
+In object-oriented programming, a class is the template of objects. A class defines how an object would look like in terms of that object’s features and functionalities. A class also encapsulates data for the object.
+
+TypeScript has built-in support for classes, which were unsupported by ES5 and earlier versions. This means we can use the class keyword to easily declare one.
+
+class Car {
+  // fields
+
+  model: String;
+  doors: Number;
+  isElectric: Boolean;
+
+  constructor(model: String, doors: Number, isElectric: Boolean) {
+    this.model = model;
+    this.doors = doors;
+    this.isElectric = isElectric;
+  }
+
+  displayMake(): void {
+    console.log(`This car is ${this.model}`);
+  }
+}
+
+const Prius = new Car('Prius', 4, true);  
+Prius.displayMake(); // This car is Prius
