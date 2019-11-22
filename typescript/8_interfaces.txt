@@ -1,0 +1,17 @@
+// Interfaces - possible to specify an object as a type in typescript
+// An interface is a syntactical contract that an entity should conform to. In other words, an interface defines the syntax that any entity must adhere to.
+interface Person {
+  firstName: string;
+  lastName: string;
+}
+
+function fullName(person: Person) {
+  console.log(`${person.firstName} ${person.lastName}`);
+}
+
+let p = {
+  firstName: 'Jerwin',
+  lastName: 'Fernandez',
+}
+
+fullName(p);

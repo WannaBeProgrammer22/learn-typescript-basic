@@ -1,40 +1,50 @@
 export { }
 
-let message = 'Welcome Back';
-console.log(message);
+// create a class
+class Employee {
+  private employeeName: string;
 
-let x = 10;
-const y = 20;
+  constructor(name: string) {
+    this.employeeName = name;
+  }
 
-let sum;
-const name = 'Jerwin Ivan S. Fernandez';
+  greet() {
+    console.log(`Good day ${this.employeeName}`);
+  }
+}
 
-// we have a variable name isBeginner have a type of boolean and a value of true
-let isBeginner: boolean = true;
+// create instance
+const me = new Employee('Jerwin');
+// call properties
+// console.log(me.employeeName);
+// call method
+me.greet();
 
-// number
-let total: number = 0;
+// possible class based inheritance
+class Manager extends Employee {
 
-// string
-let firstName: string = 'Jerwin';
+  constructor(managerName: string) {
+    super(managerName);
+  }
 
-// multiple line with embedded expressions using template strings
-let sentence: string = `My name is ${firstName}
-I am a bignner in TypeScript`;
+  // entrust (a task or responsibility) to another person
+  delegateWork() {
+    console.log(`Manager delegating tasks`);
+  }
+}
 
-console.log(sentence);
 
-// more types 
-let n: null = null;
-let u: undefined = undefined;
+let managerMe = new Manager('Jerwin');
 
-// these types are classified as subtypes of all other types - u can assign any types in these types
-let isNew: boolean = null;
-let myName: string = undefined;
+// employee method
+managerMe.greet();
+// manager method
+managerMe.delegateWork();
+// employee inherited properties
+// console.log(managerMe.employeeName);
 
-// declaring array type 2 way
-// list1 of type number
-let list1: number[] = [1, 2, 3];
-
-// list2 is an array of type number
-let list2: Array<number> = [1, 2, 3];
+// access modifiers - are keywords that set accessible of the properties and methods of a class
+// default each properties and methods has an access modifier of 
+// public - means u can access them directly
+// private - u can only use this property or method within the class, u cannot access this outside the class to secure the class properties and prevent direct edit and u cannot use it at the derived class or the child class but using the
+// protected - u can access the parent property in the derived class and u cannot access it outside

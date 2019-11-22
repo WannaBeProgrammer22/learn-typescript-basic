@@ -29,3 +29,65 @@ error: Type 'true' is not assignable to type 'string'
 
 
 // more types
+let n: null = null;
+let u: undefined = undefined;
+
+// these types are classified as subtypes of all other types - u can assign any types in these types
+let isNew: boolean = null;
+let myName: string = undefined;
+
+// declaring array type 2 way
+// list1 of type number
+let list1: number[] = [1, 2, 3];
+
+// list2 is an array of type number
+let list2: Array<number> = [1, 2, 3];
+
+
+// tuple type  - array contains a mix types constain string and number type
+
+// number of element in array is fixed
+// this expression constain 1 string value and 1 number value
+// and the order of the values must match the order of the type
+let person1: [string, number] = ['Chris', 22];
+
+
+// enum type it is a way of giving a friendly names to a set of numeric values
+enum Color { Red, Green, Blue }
+let c: Color = Color.Green;
+
+console.log(c); // 1 because enum values begins with 0 - so red is 0, green is 1, blue is 2
+
+// if u want to change the values of enum
+enum Color2 { Red = 5, Green, Blue }
+let d: Color2 = Color2.Green;
+
+console.log(d); // 6 because the first index of the enum will be 5 then green 6;
+
+// any type - with u are unsure of the type will be use any - if the input field will be a dynamic type use any
+let randomValue: any = 10;
+randomValue = true;
+randomValue = 'jerwin';
+
+// doesn't throw an error since the variable type is type any - doesn't do a force checking
+// to tacle this issue typescript 3.0 introduct new type unknown type similar to any type
+// so any value is assignable to type unknown however you cant access any properties of an unknown type, or call function or construct them
+
+// let myVariable: any = 10;
+let myVariable: unknown = 10;
+
+// user defined type guard - create new function that checks if that object has property
+function hasName(obj: any): obj is { name: string } {
+  return !!obj &&
+    typeof obj === "object" &&
+    "name" in obj;
+}
+
+if (hasName(myVariable)) {
+  console.log(myVariable.name);
+}
+
+// get rid the error use type assertion - (myVariable as string).toUpperCase(); // it will be error
+// myVariable(); // it will be error
+(myVariable as string).toUpperCase(); // it will be error
+

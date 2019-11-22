@@ -1,0 +1,31 @@
+export { }
+
+//type inference
+
+let a;
+a = 10;
+a = true;
+
+let b = 20;
+// b = true; // get error even we didnt specify a type number means stypescript inferred that the variable b is a type nnumber
+// type inference provides methods application to number type
+// type inference - provides static type checking and intellisense support
+// type inference takes place initializing  a variable
+// type inference doesn't work when u dont initialize a value like t he variable a
+// b.toExponential();
+
+
+// ability to specify union of types for the same variable
+// when a value is not in your under control
+let multiType: number | boolean;
+multiType = 20;
+multiType = true;
+
+// but u can do this
+let anyType: any;
+multiType = 20;
+multiType = true;
+
+// but using union type
+// first reason u can restrict to the specified types  but for the any type no restriction at all
+// and for the union type u can use the intellisense support but for the any type u cant

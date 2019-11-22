@@ -1,0 +1,39 @@
+export { }
+
+Function
+
+// sample function in javascript
+// function add(num1, num2) {
+//   return num1 + num2;
+// }
+
+// in typescript we can specify types in parameter and the return type
+function add(num1: number, num2: number): number {
+  return num1 + num2;
+}
+
+add(5, 10);
+// we can get intellisense support too add() will show that the function accepts 2 parameters type number and return a number
+// add();
+
+// function feature of typescript
+// optionally and default parameters
+// in typescript every parameter is assumed to be required by the function
+// if u call a function without an argument it will throw an error
+// add(); // error: an argument for num1 is not provided
+// if u do this in javascript it will not throw an error and it will do is assign the parameter with undefined value
+
+// using optinal parameters by adding ? question mark to the end of parameters u want to be optional
+// the order is all the required parameter will be the first parameter and the optional will be put to the last 
+// name, lastName, sex, age?, petName?
+function name(firstName: string, lastName?: string): string {
+  if (lastName) {
+    return `${firstName} ${lastName}`;
+  }
+  return firstName;
+}
+
+console.log(name('jerwin'));
+
+// default parameter - is like a optional parameter but has a set value and will not going to set undefined
+// lastname?: string = 'fernandez'

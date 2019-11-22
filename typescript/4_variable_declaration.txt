@@ -13,18 +13,3 @@ let sum;
 sum = x + y;
 const name; // error when u declaring a constant variable it needs a value;
 const name = 'Jerwin Ivan S. Fernandez';
-
-// more types 
-let n: null = null;
-let u: undefined = undefined;
-
-// these types are classified as subtypes of all other types - u can assign any types in these types
-let isNew: boolean = null;
-let myName: string = undefined;
-
-// declaring array type 2 way
-// list1 of type number
-let list1: number[] = [1, 2, 3];
-
-// list2 is an array of type number
-let list2: Array<number> = [1, 2, 3];

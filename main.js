@@ -1,28 +1,55 @@
 "use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 exports.__esModule = true;
-var message = 'Welcome Back';
-console.log(message);
-var x = 10;
-var y = 20;
-var sum;
-var name = 'Jerwin Ivan S. Fernandez';
-// we have a variable name isBeginner have a type of boolean and a value of true
-var isBeginner = true;
-// number
-var total = 0;
-// string
-var firstName = 'Jerwin';
-// multiple line with embedded expressions using template strings
-var sentence = "My name is " + firstName + "\nI am a bignner in TypeScript";
-console.log(sentence);
-// more types 
-var n = null;
-var u = undefined;
-// these types are classified as subtypes of all other types - u can assign any types in these types
-var isNew = null;
-var myName = undefined;
-// declaring array type 2 way
-// list1 of type number
-var list1 = [1, 2, 3];
-// list2 is an array of type number
-var list2 = [1, 2, 3];
+// create a class
+var Employee = /** @class */ (function () {
+    function Employee(name) {
+        this.employeeName = name;
+    }
+    Employee.prototype.greet = function () {
+        console.log("Good day " + this.employeeName);
+    };
+    return Employee;
+}());
+// create instance
+var me = new Employee('Jerwin');
+// call properties
+// console.log(me.employeeName);
+// call method
+me.greet();
+// possible class based inheritance
+var Manager = /** @class */ (function (_super) {
+    __extends(Manager, _super);
+    function Manager(managerName) {
+        return _super.call(this, managerName) || this;
+    }
+    // entrust (a task or responsibility) to another person
+    Manager.prototype.delegateWork = function () {
+        console.log("Manager delegating tasks");
+    };
+    return Manager;
+}(Employee));
+var managerMe = new Manager('Jerwin');
+// employee method
+managerMe.greet();
+// manager method
+managerMe.delegateWork();
+// employee inherited properties
+// console.log(managerMe.employeeName);
+// access modifiers - are keywords that set accessible of the properties and methods of a class
+// default each properties and methods has an access modifier of 
+// public - means u can access them directly
+// private - u can only use this property or method within the class, u cannot access this outside the class to secure the class properties and prevent direct edit and u cannot use it at the derived class or the child class but using the
+// protected - u can access the parent property in the derived class and u cannot access it outside
