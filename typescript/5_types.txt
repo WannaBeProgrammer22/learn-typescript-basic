@@ -1,0 +1,31 @@
+Variable Types - essence of typescript
+Boolean
+Number
+String
+
+
+// we have a variable name isBeginner have a type of boolean and a value of true
+let isBeginner: boolean = true;
+
+// number
+let total: number = 0;
+
+// string
+let firstName: string = 'Jerwin';
+
+// multiple line with embedded expressions using template strings
+let sentence: string = `My name is ${firstName}
+I am a bignner in TypeScript`;
+
+console.log(sentence);
+
+what is the use of having types
+2 important reason
+
+1. static type checking - when u try to assigning a boolean value to a variable with the type of string it will give u an error/red squidly or the horizontal zigzag line - typescript will notify you with the help of static type checking
+error: Type 'true' is not assignable to type 'string'
+
+2. intellisense - it will show the list of properties and methods related with their types
+
+
+// more types

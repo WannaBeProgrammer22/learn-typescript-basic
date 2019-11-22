@@ -1,0 +1,13 @@
+install node.js
+
+check if node is installed
+node -v
+
+install typescript - g for globally
+npm install -g typescript@latest
+
+to know the version of ts
+tsc -v
+
+then download a editor
+visual studio code

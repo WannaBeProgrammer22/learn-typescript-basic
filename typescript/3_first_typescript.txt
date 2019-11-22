@@ -1,0 +1,29 @@
+create a file and the extension name will be .ts for typescript
+main.ts
+let message = 'Hello World';
+console.log(message);
+
+next step is to compile our .ts to .js using the typescript compiler using this command
+tsc [filename]
+tsc main.ts
+
+and it will create a main.js file
+
+main.js
+var message = 'Hello World';
+console.log(message);
+
+
+to run the code use node
+node main.js
+
+error notes: cannot redeclare block-scope variable
+because the file is treated as script rather than a module 
+a module has its own scope as a script shared a global scope
+
+to fix this need to add a export {} at the top of t he page
+export { }
+
+If you want your typescript automatically compile to javascript use the typescript watch command 
+every time you save a typescript file it will automatically compile it to js
+tsc main --watch

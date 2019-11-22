@@ -1,0 +1,14 @@
+What is TypeScript?
+Open source programming language from Microsoft
+
+TypeScript is a superset of JavaScript, meaning it’s a layer around JS with more methods and that makes you follow a certain way of development that you don’t have to otherwise in vanilla (like having to set the types of your variables).
+
+Compiles down to plain JavaScript
+
+Why TypeScript?
+Relation to JavaScript
+Optional static typing and type inference
+IDE support - intellisence support
+Rapid growth and use
+TypeScript is the main programming language of Angular
+
